@@ -1,0 +1,98 @@
+[project]
+name = "scrit"
+version = "0.0.1"
+description = "command line tool to manage transcription of system audio with openai whisper"
+readme = "README.md"
+requires-python = ">=3.9"
+license = {file = "LICENSE.txt"}
+authors = [
+  {name = "Joseph Courtney", email = "5942706+josephcourtney@users.noreply.github.com" }
+]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+]
+dependencies = [
+    "PyAudio >= 0.2.13",
+    "openai-whisper >= 20230314",
+    "SpeechRecognition >= 3.10.0",
+    "torch >= 2.0.1",
+    "pyperclip >= 1.8.2",
+    "rich >= 13.4.2",
+]
+[project.urls]
+"Homepage" = "https://github.com/josephcourtney/scrit"
+
+[project.scripts]
+scrit = "scrit:main"
+
+[tool.setuptools]
+package-data = {"scrit" = ["*.json"]}
+
+[tool.ruff]
+# Decrease the maximum line length to 79 characters.
+line-length = 110
+src = ["src",]
+# ignored rules
+ignore=[
+#    "PLR0913", # Too many arguments to function call
+#    "D",
+#    "FBT003", # boolean positional value in function call
+#    "D203", # no-blank-line-before-class, not compatible with one-blank-line-before-class
+#    "D212", # multi-line-summary-first-line, not compatible with multi-line-summary-second-line
+#    "D105", # missing docstring in magic method
+]
+select=[
+    "F", # Pyflakes 
+    "E", # pycodestyle errors
+    "W", # pycodestyle warnings
+    "C90", # mccabe 
+    "I", # isort 
+    "N", # pep8-naming 
+#    "D", # pydocstyle 
+    "UP", # pyupgrade 
+    "YTT", # flake8-2020 
+#    "ANN", # flake8-annotations 
+    "S", # flake8-bandit 
+    "BLE", # flake8-blind-except 
+    "FBT", # flake8-boolean-trap 
+    "B", # flake8-bugbear 
+    "A", # flake8-builtins 
+    "COM", # flake8-commas 
+    "C4", # flake8-comprehensions 
+    "DTZ", # flake8-datetimez 
+    "T10", # flake8-debugger 
+    #"DJ", # flake8-django 
+    "EM", # flake8-errmsg 
+    "EXE", # flake8-executable 
+    #"ISC", # flake8-implicit-str-concat 
+    "ICN", # flake8-import-conventions 
+    "G", # flake8-logging-format 
+    "INP", # flake8-no-pep420 
+    "PIE", # flake8-pie 
+    #"T20", # flake8-print 
+    "PYI", # flake8-pyi 
+    "PT", # flake8-pytest-style 
+    "Q", # flake8-quotes 
+    "RSE", # flake8-raise 
+    "RET", # flake8-return 
+    "SLF", # flake8-self 
+    "SIM", # flake8-simplify 
+    "TID", # flake8-tidy-imports 
+    "TCH", # flake8-type-checking 
+    "ARG", # flake8-unused-arguments 
+    "PTH", # flake8-use-pathlib 
+    #"ERA", # eradicate 
+    "PD", # pandas-vet 
+    "PGH", # pygrep-hooks 
+    "PL", # Pylint 
+    "TRY", # tryceratops 
+    "NPY", # NumPy-specific rules 
+    "RUF", # Ruff-specific rules 
+]
+show-source=true
+show-fixes=true
+typing-modules=[]
+# disable autofix for unused imports "F401"
+unfixable=["F401"]
