@@ -1,7 +1,7 @@
 # scrit
 A simple cli tool to transcribe audio you are already listening to.
 
-<p align="center"><img src="/img/install.gif?raw=true"/></p>
+<p align="center"><img src="/img/demo.gif?raw=true"/></p>
 
 ## Usage
 When `%> scrit` runs in a terminal:
@@ -16,6 +16,7 @@ When `%> scrit` runs in a terminal:
    - detailed [here](https://github.com/ExistentialAudio/BlackHole#record-system-audio) for BlackHole
    - I found it helpful to name each multi-output device "{Audio Device} (tapped)"
    - Here is the side bar of Audio MIDI Setup for my computer
+
      ![example audio midi setup sidebar](/img/audio_midi_setup_sidebar.png)
 3. install scrit with
     -  `pip install scrit`
