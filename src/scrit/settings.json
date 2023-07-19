@@ -1,0 +1,27 @@
+{
+    "loopback_device": "BlackHole 2ch",
+    "sas_path": "",
+    "model": "tiny",
+    "model_choices": ["tiny", "base", "small", "medium", "large"],
+    "energy_threshold": 1000,
+    "record_timeout": 2.0,
+    "phrase_timeout": 3.0,
+    "english": true,
+    "copy_to_clipboard": true,
+    "output_path": "out.txt",
+    "tap_map": [
+        {
+            "output_device": "External Headphones",
+            "tapped_output_device": "External Headphones (tapped)"
+        },
+        {
+            "output_device": "MacBook Pro Speakers",
+            "tapped_output_device": "MacBook Pro Speakers (tapped)"
+        },
+        {
+            "output_device": "AirPods",
+            "tapped_output_device": "AirPods (tapped)"
+        }
+    ]
+}
+

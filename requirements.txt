@@ -1,0 +1,6 @@
+PyAudio >= 0.2.13
+openai-whisper >= 20230314
+SpeechRecognition >= 3.10.0
+torch >= 2.0.1
+pyperclip >= 1.8.2
+rich >= 13.4.2
