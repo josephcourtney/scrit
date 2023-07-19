@@ -25,7 +25,6 @@ When `%> scrit` runs in a terminal:
     - in the `tap_map` section of the configuration file, edit the device names to represent the mapping between normal and tapped versions of the output devices
 
 ```json
-...
     "tap_map": [
         {
             "output_device": "External Headphones",
@@ -40,7 +39,6 @@ When `%> scrit` runs in a terminal:
             "tapped_output_device": "AirPods (tapped)"
         }
     ]
-...
 ```
     
 ## Acknowledgments
