@@ -25,10 +25,10 @@ class App:
 
         self.console.print("configuring audio devices")
         self.audio_handler = AudioDeviceHandler(self.config)
-        self.audio_handler.setup_loopback()
+        loopback_device_index = self.audio_handler.setup_loopback()
 
         self.console.print("loading speech-to-text model")
-        self.listener = Listener(self.config)
+        self.listener = Listener(self.config, loopback_device_index)
 
         self.transcript = [""]
         self.running = True
@@ -83,4 +83,4 @@ class App:
         if self.config.write_to_file:
             with self.config.output_path.open("w") as f:
                 f.write("\n".join(self.transcript))
-            self.console.print(f"transcript written to file")
+            self.console.print("transcript written to file")
