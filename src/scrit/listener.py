@@ -14,7 +14,7 @@ import whisper  # noqa: E402
 
 
 class Listener:
-    def __init__(self, config):
+    def __init__(self, config, loopback_device_index):
         # The last time a recording was retreived from the queue.
         self.utterance_time = None
         # Current raw audio bytes.
@@ -28,8 +28,10 @@ class Listener:
         # Definitely do this, dynamic energy compensation lowers the energy threshold
         # dramtically to a point where the SpeechRecognizer never stops recording.
         recorder.dynamic_energy_threshold = False
-
-        self.source = sr.Microphone(sample_rate=16000)
+        self.source = sr.Microphone(
+            sample_rate=16000,
+            device_index=loopback_device_index,
+        )
 
         # Load / Download model
         self.audio_model = whisper.load_model(config.model + config.language_suffix)

@@ -26,6 +26,8 @@ class AudioDeviceHandler:
     def setup_loopback(self):
         if self.loopback_device in self.audio_devices:
             self.set_system_audio_device("input", self.loopback_device)
+        else:
+            print(f'"{self.loopback_device}" not found in {self.audio_devices!r}')
 
         if self.original_output_device in self.tap_map:
             self.set_system_audio_device(
@@ -36,6 +38,7 @@ class AudioDeviceHandler:
             self.original_output_device = self.tap_map_rev[self.original_output_device]
         else:
             pass
+        return self.audio_devices[self.loopback_device]['index']
 
     def set_system_audio_device(self, device_type, device):
         if device not in self.audio_devices:
